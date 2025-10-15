@@ -1,0 +1,20 @@
+name: MMP2Mol
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - joblib
+  - xgboost
+  - tensorflow
+  - rdkit
+  - mmpdb
+  - matplotlib
+  - seaborn
+  - pip
+  - pip:
+    - tqdm
