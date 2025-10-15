@@ -69,4 +69,4 @@ Some code in this repository is adapted from [HybridCLM](https://github.com/Hybr
 
 ## Contact
 
-For questions or suggestions, please open an issue or contact [your-email@example.com].
+For questions or suggestions, please open an issue or contact [228101065@csu.edu.cn].
