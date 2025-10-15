@@ -36,6 +36,25 @@ Once the installation is done, you can activate the virtual conda environment fo
 conda activate MMP2Mol
 ```
 Please note that you will need to activate this virtual conda environment every time you want to use this project.
+
+## Usage
+
+1.Prepare your CSV data file. (You could refer to the "data/input.csv" file format)
+
+2. Run the pipeline
+
+```bash
+python csv2smi.py data/your_data.csv
+python mmpdb_batch.py data/your_data
+python extract_smiles_label.py
+python mmp_rule_extract.py
+python QSAR_Model_Construction_and_Evaluation.py
+python evaluate_virtual_library.py
+```
+You can modify the path and name of the file according to your own file name
+
+
+
 ## Contributing
 
 Contributions, issues, and feature requests are welcome!
