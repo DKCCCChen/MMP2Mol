@@ -33,7 +33,7 @@ conda env create -f environment.yml
 Once the installation is done, you can activate the virtual conda environment for this project:
 
 ```bash
-conda activate hybrid
+conda activate MMP2Mol
 ```
 Please note that you will need to activate this virtual conda environment every time you want to use this project.
 ## Contributing
