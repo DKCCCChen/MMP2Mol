@@ -39,7 +39,7 @@ Please note that you will need to activate this virtual conda environment every 
 
 ## Usage
 
-1.Prepare your CSV data file. (You could refer to the "data/input.csv" file format)
+1. Prepare your CSV data file. (You could refer to the "data/input.csv" file format)
 
 2. Run the pipeline
 
@@ -52,6 +52,57 @@ python QSAR_Model_Construction_and_Evaluation.py
 python evaluate_virtual_library.py
 ```
 You can modify the path and name of the file according to your own file name
+
+3. Molecular generation
+
+First, we recommend using the Linux environment for molecular generation and design.
+
+You can run the following command, which will create a conda virtual environment and install all the needed packages:
+
+```bash
+cd Molecular generation and design/
+conda env create -f environment.yml
+```
+
+Once the installation is done, you can activate the virtual conda environment for the next step:
+
+```bash
+conda activate MMP2Mol_MG
+```
+
+You can run the example experiment based on the data used in the paper by following the procedure.
+
+A. Process the data and pretrain the chemical language model(CLM):
+
+```bash
+cd experiments/
+sh run_processing.sh configfiles/clm/A01_clm.ini
+
+sh run_training.sh configfiles/clm/A01_clm.ini
+#You can modify the content in A01_clm.ini according to your needs to meet your personalized requirements.
+```
+
+You can skip this step, as we provide the processd pretraining data.
+
+B. Process the data and fine-tune the CLM
+Then, you can fine-tune the pre-trained model to generate molecules.
+
+```bash
+sh run_processing.sh configfiles/ft_clm_generation/A01_clm_ft.ini
+sh run_training.sh configfiles/ft_clm_generation/A01_clm_ft.ini
+
+#You can also modify the content in A01_clm_ft.ini according to your needs to meet your personalized requirements.
+```
+
+C. Generate the SMILES strings with the fine-tuned CLM:
+```bash
+sh run_generation.sh configfiles/ft_clm_generation/A01_clm_ft.ini
+```
+
+D. Process the generated SMILES strings to get the new molecules to constitute the focused virtual chemical library
+```bash
+sh run_novo.sh configfiles/ft_clm_generation/A01_clm_ft.ini
+```
 
 
 
