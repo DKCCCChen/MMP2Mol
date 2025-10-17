@@ -53,7 +53,15 @@ python evaluate_virtual_library.py
 ```
 You can modify the path and name of the file according to your own file name
 
+3. Molecular generation
 
+You can generate molecules through the CLM model.
+First, you need to clone the repository in Linux environment:
+
+```bash
+git clone git@github.com:ETHmodlab/hybridCLMs.git
+```
+Then, you can run the following command, which will create a conda virtual environment and install all the needed packages
 
 ## Contributing
 
