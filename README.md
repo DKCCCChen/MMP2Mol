@@ -1,4 +1,4 @@
-# Project Name
+# MMP2Mol
 
 ## Description
 
@@ -46,7 +46,7 @@ Please note that you will need to activate this virtual conda environment every 
 ```bash
 python csv2smi.py data/your_data.csv
 python mmpdb_batch.py data/your_data
-python extract_smiles_label.py
+python extract_smiles_label.py data/input.csv data/input_label.csv
 python mmp_rule_extract.py
 python QSAR_Model_Construction_and_Evaluation.py
 python evaluate_virtual_library.py
