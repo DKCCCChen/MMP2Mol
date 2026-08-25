@@ -26,8 +26,10 @@ Requirements:
 
 ```bash
 cd MMP2Mol/
-conda env create -f environment.yml
-# Or pip install -r requirements.txt
+conda create -n MMP2Mol python=3.7.13
+conda activate MMP2Mol
+python -m pip install pip==22.1.2
+pip install -r requirements.txt
 
 ```
 Once the installation is done, you can activate the virtual conda environment for this project:
@@ -48,7 +50,11 @@ python csv2smi.py data/your_data.csv
 python mmpdb_batch.py data/your_data
 python extract_smiles_label.py data/input.csv data/input_label.csv
 python mmp_rule_extract.py
-python QSAR_Model_Construction_and_Evaluation.py
+python QSAR_Model_Construction_and_Evaluation.py \
+  --input data/input.csv \
+  --output-dir outputs/input_qsar \
+  --target TARGET_NAME \
+  --seed 42
 python evaluate_virtual_library.py
 ```
 You can modify the path and name of the file according to your own file name
